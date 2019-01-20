@@ -26,7 +26,7 @@ public class Sets {
 
         // Removing items from the set using remove()
         cards.remove("Ace");
-        System.out.println("Collection after removing Joker:\n"+cards+"\n");
+        System.out.println("Collection after removing Ace:\n"+cards+"\n");
 
         // Looking for a specific item
         System.out.println("Collection contains a Joker card: " +
@@ -60,7 +60,7 @@ public class Sets {
         randomCards.add("Seven");
         System.out.println(randomCards);
 
-        System.out.println("\nHere we have a destructive set-difference");
+        System.out.println("\nHere we have a destructive set-difference between the two sets");
         // removing from sortedCards the items in common with randomCards
         sortedCards.removeAll(randomCards);
         for (String card : sortedCards)
@@ -68,7 +68,6 @@ public class Sets {
 
 
         System.out.println("\n\n********** END OF SET IMPLEMENTATION EXAMPLES **********\n");
-
 
     }
 }
