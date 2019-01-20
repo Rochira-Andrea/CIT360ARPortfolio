@@ -1,6 +1,6 @@
 package View;
 
-import Collections.Set;
+import Collections.*;
 
 public class CollectionView extends View {
 
@@ -33,13 +33,19 @@ public class CollectionView extends View {
             case "0":
                 return false;
             case "1":
-                Set.showSetImplementations();
+                Sets.showSetImplementations();
                 break;
             case "2":
-                System.out.println("...work in progress...");
+                Lists.showListImplementations();
                 break;
             case "3":
-                System.out.println("...work in progress...");
+                Queues.showQueueImplementations();
+                break;
+            case "4":
+                Deques.showDequeImplementations();
+                break;
+            case "5":
+                Maps.showMapImplementations();
                 break;
             default:
                 System.out.println("\nInvalid selection. Please, try again.");
