@@ -9,6 +9,5 @@ public class Main {
 
         View view = new ChoiceView();
         view.displayView();
-
     }
 }

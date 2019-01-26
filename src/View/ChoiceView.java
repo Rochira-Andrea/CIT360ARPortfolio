@@ -1,5 +1,7 @@
 package View;
 
+import Threads.Executy;
+
 public class ChoiceView extends View {
 
     public ChoiceView() {
@@ -11,6 +13,7 @@ public class ChoiceView extends View {
         return "\nCoding Topics\n"
                + "-------------\n"
                + "1 - Collections\n"
+               + "2 - Threads, Runnables, Executors & Atomic variables\n"
                + "0 - Quit";
     }
 
@@ -31,6 +34,9 @@ public class ChoiceView extends View {
                 return false;
             case "1":
                 viewCollection();
+                break;
+            case "2":
+                Executy.entryPoint();
                 break;
             default:
                 System.out.println("\nInvalid selection. Please, try again.");
