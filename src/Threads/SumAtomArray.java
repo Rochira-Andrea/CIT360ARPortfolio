@@ -4,6 +4,10 @@ import java.util.concurrent.atomic.AtomicIntegerArray;
 
 public class SumAtomArray {
 
+    // empty constructor
+    SumAtomArray(){
+    }
+
     private int sum;
 
     synchronized Integer sumArray() {
