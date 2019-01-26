@@ -22,7 +22,7 @@ public class SumAtomArray {
 
         for (int i = 0; i<atomIntArray.length(); i++) {
             sum += atomIntArray.get(i);
-            System.out.println("Running total for "+ Thread.currentThread().getName() + " is "+ sum);
+                System.out.println("Running total for " + Thread.currentThread().getName() + " is " + sum);
         }
 
         return sum;
