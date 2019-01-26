@@ -34,14 +34,14 @@ public class Executy {
         Future<String> future = ES.submit(new Callable<String>() {
             @Override
             public String call() {
-                return "Feedback from Callable\n";
+                return "Feedback from Callable";
             }
         });
 
         //  if no exception is raised, then tasks executed successfully
         try {
             // Wait for the tasks to finish executing
-            System.out.println(future.get());
+            System.out.println(future.get()+" - All tasks completed: "+ future.isDone()+"\n");
         } catch(ExecutionException e) {
             System.out.println("Something went wrong while executing the task");
         } catch(InterruptedException e) {
