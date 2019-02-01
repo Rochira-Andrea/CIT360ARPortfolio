@@ -1,5 +1,6 @@
 package View;
 
+import Hibernate.HiberMain;
 import MVC.MVCStart;
 import Threads.Executy;
 
@@ -16,6 +17,7 @@ public class ChoiceView extends View {
                + "1 - Collections\n"
                + "2 - Threads, Runnables, Executors & Atomic variables\n"
                + "3 - Model, View, Control\n"
+               + "4 - Hibernate\n"
                + "0 - Quit";
     }
 
@@ -42,6 +44,9 @@ public class ChoiceView extends View {
                 break;
             case "3":
                 MVCStart.planetDB();
+                break;
+            case "4":
+                HiberMain.runHiber();
                 break;
             default:
                 System.out.println("\nInvalid selection. Please, try again.");

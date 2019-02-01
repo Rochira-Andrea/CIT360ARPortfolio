@@ -33,7 +33,7 @@ public class MVCStart {
 
     }
 
-    public static ArrayList<Planet> planetsList(){
+    private static ArrayList<Planet> planetsList(){
         // create a data source
         ArrayList<Planet> Planets = new ArrayList<>();
         Planets.add(new Planet("Mercury",false,0));

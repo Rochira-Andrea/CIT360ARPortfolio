@@ -1,0 +1,29 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- Connection settings -->
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- Sample MySQL URL provided  -->
+        <property name="connection.url">jdbc:mysql://localhost:3306/cit360</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">antares82</property>
+
+        <!-- Show SQL on console -->
+        <!-- For debugging purposes we put true and we will receive feedback about the sql operations on the database -->
+        <property name="show_sql">false</property>
+
+        <!--Setting Session context model -->
+        <property name="current_session_context_class">thread</property>
+
+        <!-- Model classes
+        <mapping class="Employee"/>
+        <mapping class="EmployeePrivate"/>
+        -->
+
+    </session-factory>
+</hibernate-configuration>
