@@ -46,7 +46,7 @@ public class HiberMain {
 
             System.out.println("Adding the following records to the database:\n");
 
-            // retrieve back records - NOTE: the IDE underlines in red the word Employee but it works!
+            // retrieve back records - NOTE: the IDE underlines in red the word Employee but it works! :)
             Query allEmp = session.createQuery("from Employee");
             List<Employee> employees = allEmp.getResultList();
 
