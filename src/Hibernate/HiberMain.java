@@ -12,8 +12,10 @@ public class HiberMain {
 
     public static void runHiber(){
 
+        // create the session manager
         SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").addAnnotatedClass(Employee.class).addAnnotatedClass(EmployeePrivate.class).buildSessionFactory();
 
+        // create a Session object to establish the connection with the database
         Session session = factory.getCurrentSession();
 
         System.out.println("\n-------------------------------------\n"
@@ -21,6 +23,7 @@ public class HiberMain {
                           +"-------------------------------------\n");
 
         try {
+            // create new Employee objects tht will be mapped as records in the DB
             Employee emp1 = new Employee("IT", "080-9998877", "DB Admin");
             Employee emp2 = new Employee("HR", "080-9998866", "HR Coordinator");
             Employee emp3 = new Employee("Marketing", "080-9998855", "Consultant");

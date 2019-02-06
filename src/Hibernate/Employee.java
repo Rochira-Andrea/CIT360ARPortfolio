@@ -1,13 +1,14 @@
 package Hibernate;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
 @Table(name="Employee")
 
-public class Employee {
+public class Employee implements Serializable {
 
     @Id
     @GeneratedValue(strategy = IDENTITY )

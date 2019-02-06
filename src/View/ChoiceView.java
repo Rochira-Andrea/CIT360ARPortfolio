@@ -1,5 +1,6 @@
 package View;
 
+import ApplicationControllerPattern.APCmain;
 import Hibernate.HiberMain;
 import MVC.MVCStart;
 import Threads.Executy;
@@ -18,6 +19,7 @@ public class ChoiceView extends View {
                + "2 - Threads, Runnables, Executors & Atomic variables\n"
                + "3 - Model, View, Control\n"
                + "4 - Hibernate\n"
+               + "5 - Application Controller Pattern\n"
                + "0 - Quit";
     }
 
@@ -47,6 +49,9 @@ public class ChoiceView extends View {
                 break;
             case "4":
                 HiberMain.runHiber();
+                break;
+            case "5":
+                APCmain.runAPC();
                 break;
             default:
                 System.out.println("\nInvalid selection. Please, try again.");

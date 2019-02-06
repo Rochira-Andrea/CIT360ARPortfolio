@@ -17,7 +17,7 @@
         <!-- For debugging purposes we put true and we will receive feedback about the sql operations on the database -->
         <property name="show_sql">false</property>
 
-        <!--Setting Session context model -->
+        <!--Setting Session context model: current sessions will tracked by thread of execution -->
         <property name="current_session_context_class">thread</property>
 
         <!-- Model classes
