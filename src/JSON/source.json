@@ -1,0 +1,3 @@
+{"contacts":[{"firstName":"Ruben","middleName":"Oscar","lastName":"Saldana","title":"Mr","gender":"M","birthYear":1956,"email":null,"phone":"(480) 220-0003","address":{"street":"654 Del Rio street","city":"Chandler","state":"AZ",
+  "zipCode":85225}},{"firstName":"Nora","middleName":null,"lastName":"Saldana","title":"Mrs","gender":"F","birthYear":1958,"email":null,"phone":"(480) 220-0004","address":{"street":"654 Del Rio street","city":"Chandler","state":"AZ",
+  "zipCode":85225}}]}

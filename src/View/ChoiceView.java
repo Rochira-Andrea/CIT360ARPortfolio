@@ -20,6 +20,7 @@ public class ChoiceView extends View {
                + "3 - Model, View, Control\n"
                + "4 - Hibernate\n"
                + "5 - Application Controller Pattern\n"
+               + "6 - JSON Parsing\n"
                + "0 - Quit";
     }
 
@@ -53,6 +54,9 @@ public class ChoiceView extends View {
             case "5":
                 APCmain.runAPC();
                 break;
+            case "6":
+                viewJASON();
+                break;
             default:
                 System.out.println("\nInvalid selection. Please, try again.");
         }
@@ -62,6 +66,12 @@ public class ChoiceView extends View {
     private void viewCollection(){
 
         View view = new CollectionView();
+        view.displayView();
+    }
+
+    private void viewJASON(){
+
+        View view = new JASONview();
         view.displayView();
     }
 }
