@@ -10,7 +10,7 @@ public class JASONview extends View {
         return "\nJSON Parsing\n"
                 + "-----------\n"
                 + "1 - Serialization of a Java collection\n"
-                + "2 - Deserialization of a collection of objects from a JSON source file\n"
+                + "2 - Deserialization of a collection of objects from a JSON source string\n"
                 + "0 - Go back and choose another coding topic";
     }
 

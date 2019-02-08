@@ -70,7 +70,7 @@ public class JSONmain {
         for(Contact c : list){
             System.out.println("Contact name: "+c.getFirstName()+" "+c.getLastName()+"\n"+
                                "Contact phone: "+c.getPhone()+"\n"+
-                               "Contact address: "+c.getAddress().getStreet()+"\n"
+                               "Contact address: "+c.getAddress().getStreet()+"\n\t\t\t\t "
                                                   +c.getAddress().getZipCode()+", "
                                                   +c.getAddress().getCity()+", "
                                                   +c.getAddress().getState()+"\n");
