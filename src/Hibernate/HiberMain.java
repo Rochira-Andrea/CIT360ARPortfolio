@@ -53,9 +53,6 @@ public class HiberMain {
             Query allEmp = session.createQuery("from Employee");
             List<Employee> employees = allEmp.getResultList();
 
-            // commit the changes
-            session.getTransaction().commit();
-
             // iterate through
             for(Employee e : employees){
                 System.out.println("Employee id: "+e.getEmployeeId()
@@ -63,6 +60,9 @@ public class HiberMain {
                                   +", Title: " +e.getEmployeeTitle()
                                   +"\n");
             }
+
+            // commit the changes
+            session.getTransaction().commit();
 
         } finally {
             session.close();
