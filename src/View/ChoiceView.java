@@ -21,6 +21,7 @@ public class ChoiceView extends View {
                + "4 - Hibernate\n"
                + "5 - Application Controller Pattern\n"
                + "6 - JSON Parsing\n"
+               + "7 - URL & Http Connections\n"
                + "0 - Quit";
     }
 
@@ -57,6 +58,9 @@ public class ChoiceView extends View {
             case "6":
                 viewJASON();
                 break;
+            case "7":
+                viewURL();
+                break;
             default:
                 System.out.println("\nInvalid selection. Please, try again.");
         }
@@ -74,4 +78,10 @@ public class ChoiceView extends View {
         View view = new JASONview();
         view.displayView();
     }
+
+    private void viewURL(){
+        View view = new URLview();
+        view.displayView();
+    }
+
 }
