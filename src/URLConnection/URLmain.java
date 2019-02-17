@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.*;
+import java.util.Date;
 
 public class URLmain {
 
@@ -42,29 +43,34 @@ public class URLmain {
             // set the target URL
             URL url = new URL("http://example.org");
 
-            // open the connection (and cast it in order to use methods unique to HttpURLConnection)
+            // create a new connection object (and cast it in order to use methods unique to HttpURLConnection)
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
             // set the request method to GET
             connection.setRequestMethod("GET");
-            connection.setRequestProperty("User-Agent", "Safari");
+            connection.setRequestProperty("User-Agent", "Java Client; Mac OS");
             connection.setInstanceFollowRedirects(false);
 
             // display the response code
             int respCode = connection.getResponseCode();
-            System.out.println("\nInformation about URL " + connection.getURL()
-                    + "\nResponse code: " + respCode
-                    + "\nResponse message: " + connection.getResponseMessage());
 
             if (respCode != 200) {
-                System.out.println("Response code is " + respCode + " --> your content cannot be retrieved");
+                System.out.println("Response code: " +respCode
+                                 + "Response message: "+connection.getResponseMessage());
+            } else {
+                System.out.println("\nInformation about URL " + connection.getURL()
+                                 + "\nResponse code:\t\t" + respCode
+                                 + "\nResponse message:\t" + connection.getResponseMessage()
+                                 + "\nContent type:\t\t" + connection.getContentType()
+                                 + "\nDate:\t\t\t\t" +new Date(connection.getDate())
+                                 );
             }
 
             // close the connection
             connection.disconnect();
 
         } catch (IOException e) {
-            System.out.println("IOException: " + e.getMessage());
+            System.out.println("IOException: Invalid Web Address -->" + e.getMessage());
         }
 
     }
@@ -75,25 +81,32 @@ public class URLmain {
             // set the target URL
             URL url = new URL("http://example.org/subpage.html");
 
-            // open the connection (and cast it in order to use methods unique to HttpURLConnection)
+            // create a new connection object (and cast it in order to use methods unique to HttpURLConnection)
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
 
-            // set the request method to GET
+            // set the connection properties
             connection.setRequestMethod("GET");
-            connection.setRequestProperty("User-Agent", "Safari/12.0");
+            connection.setRequestProperty("User-Agent", "Java Client; Mac OS");
             connection.setInstanceFollowRedirects(false);
 
-            // display the response code
+            // start the connection
+            connection.connect();
+
+            // retrieve the response code
             int respCode = connection.getResponseCode();
 
-            if (connection.HTTP_NO_CONTENT == 204) {
-                System.out.println("\nThe specific content " + connection.getURL() + " you're looking for cannot be retrieved"
-                        + "\nResponse code: " + respCode
-                        + "\nResponse message: " + connection.getResponseMessage());
+            // check the response code and http status
+            if (respCode == 404 ||  connection.HTTP_NOT_FOUND == 404) {
+                System.out.println("\nThe specific content " + connection.getURL() + " you're looking for was not found"
+                                 + "\nResponse code: " + respCode
+                                 + "\nResponse message: " + connection.getResponseMessage());
             } else {
                 System.out.println("\nInformation about URL " + connection.getURL()
-                        + "\nResponse code: " + respCode
-                        + "\nResponse message: " + connection.getResponseMessage());
+                                + "\nResponse code:\t\t" + respCode
+                                + "\nResponse message:\t" + connection.getResponseMessage()
+                                + "\nContent type:\t\t" + connection.getContentType()
+                                + "\nDate:\t\t\t\t" +new Date(connection.getDate())
+                                );
             }
 
             // disconnect session
@@ -103,6 +116,6 @@ public class URLmain {
             e.printStackTrace();
         } catch (IOException e) {
             e.getMessage();
-        }
+        } 
     }
 }
