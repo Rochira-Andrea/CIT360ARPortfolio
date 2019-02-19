@@ -1,5 +1,6 @@
 package ServletContainer;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,6 +21,8 @@ public class Servlet extends HttpServlet {
 
         PrintWriter out = response.getWriter();
         response.setContentType("text/html");
+
+        RequestDispatcher requestDispatcher;
 
         int solution = 0;
         String message;
@@ -42,22 +45,56 @@ public class Servlet extends HttpServlet {
                 break;
             default:
                 message = "Missing or mispelled operator, please use one of the following: +, −, *, / or %";
-                out.println("<div name=\"Output\">"+message+"</div>");
-                break;
+                out.println("<html style=\"background-color:lightgrey\"><head><title>Answer Tab</title></head><header>");
+                out.println("<h3 name=\"Output\"><font color=\"red\">" + message + "</font></h3>");
+                out.println("</header><body>");
+                out.println("<button type=\"button\" style=\"background-color:lightgreen\"><a style=\"text-decoration:none\" href=\"index.jsp\">Back</a></button><p></p><br><hr>");
+                out.println("</body></html>");
+                return;
+
+                /* --- Alternative solution
+                // request.setAttribute("result",message);
+                // requestDispatcher = request.getRequestDispatcher("index.jsp");
+                // requestDispatcher.forward(request, response);
+                */
         }
 
         if (solution == Integer.parseInt(userAnswer)) {
             message = "Correct! Good job.";
-            out.println("<div name=\"Output\">"+message+"</div>");
-        }
-        else {
+            out.println("<html style=\"background-color:lightgrey\"><head><title>Answer Tab</title><header>");
+            out.println("<h3 name=\"Output\"><font color=\"blue\">" + message + "</font></h3>");
+            out.println("</header><body>");
+            out.println("<button type=\"button\" style=\"background-color:lightgreen\"><a style=\"text-decoration:none\" href=\"index.jsp\">Back</a></button><p></p><br><hr>");
+            out.println("</body></html>");
+
+            /* --- Alternative solution
+                // request.setAttribute("result",message);
+                // requestDispatcher = request.getRequestDispatcher("index.jsp");
+                // requestDispatcher.forward(request, response);
+                */
+
+        } else {
             message = "Incorrect. Try again!";
-            out.println("<div name=\"Output\">"+message+"</div>");
+            out.println("<html style=\"background-color:lightgrey\"><head><title>Answer Tab</title><header>");
+            out.println("<h3 name=\"Output\"><font color=\"red\">" + message + "</font></h3>");
+            out.println("</header><body>");
+            out.println("<button type=\"button\" style=\"background-color:lightgreen\"><a style=\"text-decoration:none\" href=\"index.jsp\">Back</a></button><p></p><br><hr>");
+            out.println("</body></html>");
+
+            /* --- Alternative solution
+                // request.setAttribute("result",message);
+                // requestDispatcher = request.getRequestDispatcher("index.jsp");
+                // requestDispatcher.forward(request, response);
+                */
         }
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+        out.println("Response from doGet method");
 
     }
 }
