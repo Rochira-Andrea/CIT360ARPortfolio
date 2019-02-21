@@ -1,6 +1,5 @@
 package ServletContainer;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,8 +20,6 @@ public class Servlet extends HttpServlet {
 
         PrintWriter out = response.getWriter();
         response.setContentType("text/html");
-
-        RequestDispatcher requestDispatcher;
 
         int solution = 0;
         String message;
@@ -53,6 +50,7 @@ public class Servlet extends HttpServlet {
                 return;
 
                 /* --- Alternative solution
+                // RequestDispatcher requestDispatcher;
                 // request.setAttribute("result",message);
                 // requestDispatcher = request.getRequestDispatcher("index.jsp");
                 // requestDispatcher.forward(request, response);
@@ -69,6 +67,7 @@ public class Servlet extends HttpServlet {
 
             /* --- Alternative solution
                 // request.setAttribute("result",message);
+                // RequestDispatcher requestDispatcher;
                 // requestDispatcher = request.getRequestDispatcher("index.jsp");
                 // requestDispatcher.forward(request, response);
                 */
@@ -83,6 +82,7 @@ public class Servlet extends HttpServlet {
 
             /* --- Alternative solution
                 // request.setAttribute("result",message);
+                // RequestDispatcher requestDispatcher;
                 // requestDispatcher = request.getRequestDispatcher("index.jsp");
                 // requestDispatcher.forward(request, response);
                 */
