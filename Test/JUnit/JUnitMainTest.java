@@ -90,9 +90,9 @@ class JUnitMainTest {
         System.out.println("\nTest 7 - make sure that a specific object in an Array is null");
 
         Integer[] IntArrayOne = new Integer[3];
-        IntArrayOne[0] = new Integer(JUnitMain.getRandomValue(1000, 1005));
+        IntArrayOne[0] = new Integer(JUnitMain.getRandomValue(100, 105));
         IntArrayOne[1] = null;
-        IntArrayOne[2] = new Integer(JUnitMain.getRandomValue(1000, 1005));
+        IntArrayOne[2] = new Integer(JUnitMain.getRandomValue(100, 105));
 
         assertNull(IntArrayOne[1],"Array element not null!");
         System.out.println("Test 7 passed: Element null as expected!\n");
@@ -105,9 +105,9 @@ class JUnitMainTest {
         int maximumLength = 3;
 
         List<Integer> IntegerList = new ArrayList<>();
-        IntegerList.add(0,new Integer(JUnitMain.getRandomValue(1000, 1005)));
-        IntegerList.add(1,new Integer(JUnitMain.getRandomValue(1000, 1005)));
-        IntegerList.add(2,new Integer(JUnitMain.getRandomValue(1000, 1005)));
+        IntegerList.add(0,new Integer(JUnitMain.getRandomValue(2000, 2005)));
+        IntegerList.add(1,new Integer(JUnitMain.getRandomValue(2000, 2005)));
+        IntegerList.add(2,new Integer(JUnitMain.getRandomValue(2000, 2005)));
 
         assertFalse(IntegerList.size() > maximumLength, "ArrayList is equal or smaller than maximum length");
         System.out.println("Test 8 passed: Array is not larger than required"
